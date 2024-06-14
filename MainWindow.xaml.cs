@@ -56,13 +56,12 @@ namespace RecipeManagementAppWPF
                 if (indexVal >= 0)
                 {
                     var selectedRecipe = recipes[indexVal];
-                    var changeScaleWindow = new ChangeScaleWindow(selectedRecipe);
+                    var changeScaleWindow = new ChangeScale(selectedRecipe);
                     bool? dialogResult = changeScaleWindow.ShowDialog();
 
                     if (dialogResult == true)
                     {
                         // Optionally update UI or display a message after scale change
-                        MessageBox.Show("Scale changed successfully!");
                     }
                 }
             }
