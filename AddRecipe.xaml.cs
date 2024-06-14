@@ -36,6 +36,13 @@ namespace RecipeManagementAppWPF
                     OriginalQuantities = new List<double>(ingredients.Select(i => i.Quantity)),
                     OriginalCalories = new List<double>(ingredients.Select(i => i.Calories))
                 };
+
+                double totalCalories = Recipe.CalculateTotalCalories(NewRecipe.Ingredients);
+                if (totalCalories > 300)
+                {
+                    MessageBox.Show("Warning: Total calories exceed 300 Kcal!");
+                }
+
                 this.DialogResult = true;
                 this.Close();
             }

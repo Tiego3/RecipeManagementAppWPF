@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipeManagementAppWPF"
         mc:Ignorable="d"
-        Title="AddRecipe" Height="600" Width="400">
+        Title="AddRecipe" Height="650" Width="450">
     <ScrollViewer>
         <StackPanel Margin="10">
             <TextBlock Text="Add a New Recipe" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 20 0"/>

@@ -16,6 +16,8 @@
             <TextBlock Text="Ingredients:" FontSize="18" FontWeight="Bold"/>
             <ListBox x:Name="IngredientsListBox" FontSize="16" Margin="0 0 0 20"/>
 
+            <TextBlock x:Name="CaloriesWarningTextBlock"  FontSize="18" FontWeight="Bold" Margin="0 0 0 20"/>
+            
             <TextBlock Text="Steps:" FontSize="18" FontWeight="Bold"/>
             <ListBox x:Name="StepsListBox" FontSize="16" Margin="0 0 0 20"/>
 

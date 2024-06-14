@@ -73,11 +73,20 @@ namespace RecipeManagementAppWPF
 
         private void ResetBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Implement the logic to reset the recipe to original values
             if (recipes.Count > 0)
             {
                 int indexVal = GetRecipeIndex("Select a recipe to reset to original values:", recipes);
-                Recipe.ResetToOriginalValues(recipes[indexVal]);
+                if (indexVal >= 0)
+                {
+                    var selectedRecipe = recipes[indexVal];
+                    var resetRecipeWindow = new ResetRecipe(selectedRecipe);
+                    bool? dialogResult = resetRecipeWindow.ShowDialog();
+
+                    if (dialogResult == true)
+                    {
+                        // Optionally update UI or display a message after reset
+                    }
+                }
             }
             else
             {

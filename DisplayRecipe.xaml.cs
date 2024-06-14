@@ -22,7 +22,7 @@ namespace RecipeManagementAppWPF
     {
         public DisplayRecipe(Recipe recipe)
         {
-            InitializeComponent();
+            InitializeComponent();            
             DisplayRecipeDetails(recipe);
         }
         private void DisplayRecipeDetails(Recipe recipe)
@@ -37,6 +37,14 @@ namespace RecipeManagementAppWPF
             foreach (var step in recipe.Steps)
             {
                 StepsListBox.Items.Add(step.StepsDescription);
+            }
+
+            // Check if calories exceed threshold and display warning
+            double totalCalories = Recipe.CalculateTotalCalories(recipe.Ingredients);
+            if (totalCalories > 300)
+            {
+                CaloriesWarningTextBlock.Text = "Warning: Total calories exceed 300 Kcal!";
+                CaloriesWarningTextBlock.Foreground = Brushes.Red; // Optionally change color for emphasis
             }
         }
 
