@@ -1,0 +1,9 @@
+﻿<Window x:Class="RecipeManagementAppWPF.PieChart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:OxyPlot="http://oxyplot.org/wpf"
+        Title="Food Group Pie Chart" Height="400" Width="400">
+    <Grid>
+        <OxyPlot:PlotView Name="PieChartView" Margin="10"/>
+    </Grid>
+</Window>

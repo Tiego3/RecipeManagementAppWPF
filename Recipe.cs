@@ -191,7 +191,7 @@ namespace RecipeManagementApp
             double totalCalories = 0;
             foreach (var ingredient in ingredients)
             {
-                if (ingredient.Calories > 0)
+                if (ingredient.Calories >= 0)
                     totalCalories += ingredient.Calories;
                 else
                     throw new Exception();

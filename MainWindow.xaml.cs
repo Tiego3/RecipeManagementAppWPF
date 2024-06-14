@@ -119,5 +119,50 @@ namespace RecipeManagementAppWPF
             MessageBox.Show("Invalid input. Please enter a valid recipe number.");
             return -1;
         }
+        private void CreateMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (recipes.Count > 0)
+            {
+                var menuWindow = new MenuSelection(recipes);
+                if (menuWindow.ShowDialog() == true)
+                {
+                    var selectedRecipes = menuWindow.SelectedRecipes;
+                    DisplayPieChart(selectedRecipes);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No recipes added yet.");
+            }
+
+        }
+
+        private void DisplayPieChart(List<Recipe> selectedRecipes)
+        {
+            // Calculate the food group percentages
+            var foodGroupTotals = new Dictionary<string, double>();
+            foreach (var recipe in selectedRecipes)
+            {
+                foreach (var ingredient in recipe.Ingredients)
+                {
+                    if (foodGroupTotals.ContainsKey(ingredient.FoodGroup))
+                    {
+                        foodGroupTotals[ingredient.FoodGroup] += ingredient.Quantity;
+                    }
+                    else
+                    {
+                        foodGroupTotals[ingredient.FoodGroup] = ingredient.Quantity;
+                    }
+                }
+            }
+
+            double totalQuantity = foodGroupTotals.Values.Sum();
+            var foodGroupPercentages = foodGroupTotals.ToDictionary(kvp => kvp.Key, kvp => kvp.Value / totalQuantity * 100);
+
+            // Create a pie chart window
+            var pieChartWindow = new PieChart(foodGroupPercentages);
+            pieChartWindow.ShowDialog();
+        }
+
     }
 }

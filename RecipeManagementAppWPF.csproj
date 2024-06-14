@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
+    <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="RecipeManagementApp">
       <HintPath>..\RecipeManagementApp-master\RecipeManagementApp-master\RecipeManagementApp\bin\Debug\net8.0\RecipeManagementApp.dll</HintPath>
     </Reference>
