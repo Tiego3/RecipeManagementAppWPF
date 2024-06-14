@@ -1,0 +1,19 @@
+﻿<Window x:Class="RecipeManagementAppWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipeManagementAppWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="364">
+    <Grid Margin="0,0,425,0">
+        <StackPanel Margin="20,20,-271,20">
+            <TextBlock Text="RECIPE MANAGEMENT" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 0 20"/>
+            <Button Content="Add a Recipe" FontSize="24" Click="AddRecipe_Click" Margin="0 0 0 10" Height="50"/>
+            <Button Content="Display Recipe" FontSize="24" Click="DisplayRecipe_Click" Margin="0 0 0 10" Height="50"/>
+            <Button Content="Change Scale" FontSize="24" Click="ChangeScale_Click" Margin="0 0 0 10" Height="50"/>
+            <Button Content="Reset to Original Value" FontSize="24" Click="Reset_Click" Margin="0 0 0 10" Height="50" />
+            <Button Content="Exit" FontSize="24" Click="Exit_Click" Height="50" />
+        </StackPanel>
+    </Grid>
+</Window>
