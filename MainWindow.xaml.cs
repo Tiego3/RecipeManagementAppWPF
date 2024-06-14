@@ -40,11 +40,14 @@ namespace RecipeManagementAppWPF
 
         private void DisplayRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Implement the logic to display a recipe
             if (recipes.Count > 0)
             {
                 int indexVal = GetRecipeIndex("Select a recipe to display:", recipes);
-                Recipe.DisplayRecipe(recipes[indexVal].Name, recipes[indexVal]);
+                if (indexVal >= 0)
+                {
+                    var displayRecipeWindow = new DisplayRecipe(recipes[indexVal]);
+                    displayRecipeWindow.ShowDialog();
+                }
             }
             else
             {
