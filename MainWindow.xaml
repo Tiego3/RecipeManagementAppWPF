@@ -7,13 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="364">
     <Grid Margin="0,0,425,0">
-        <StackPanel Margin="20,20,-271,20">
+        <StackPanel Margin="20,20,-304,20">
             <TextBlock Text="RECIPE MANAGEMENT" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 0 20"/>
-            <Button Content="Add a Recipe" FontSize="24" Click="AddRecipe_Click" Margin="0 0 0 10" Height="50"/>
-            <Button Content="Display Recipe" FontSize="24" Click="DisplayRecipe_Click" Margin="0 0 0 10" Height="50"/>
-            <Button Content="Change Scale" FontSize="24" Click="ChangeScale_Click" Margin="0 0 0 10" Height="50"/>
-            <Button Content="Reset to Original Value" FontSize="24" Click="Reset_Click" Margin="0 0 0 10" Height="50" />
-            <Button Content="Exit" FontSize="24" Click="Exit_Click" Height="50" />
-        </StackPanel>
+            <Button Name="AddRecipeBtn" Content="Add a Recipe" FontSize="24" Click="AddRecipeBtn_Click" Margin="0 0 0 10" Height="50"/>
+            <Button Name="DisplayRecipeBtn" Content="Display Recipe" FontSize="24" Click="DisplayRecipeBtn_Click" Margin="0 0 0 10" Height="50"/>
+            <Button Name="ChangeScaleBtn" Content="Change Scale" FontSize="24" Click="ChangeScaleBtn_Click" Margin="0 0 0 10" Height="50"/>
+            <Button Name="ResetBtn" Content="Reset to Original Value" FontSize="24" Click="ResetBtn_Click" Margin="0 0 0 10" Height="50" />
+            <Button Name="ExitBtn" Content="Exit" FontSize="24" Click="ExitBtn_Click" Height="50" /></StackPanel>
     </Grid>
 </Window>
