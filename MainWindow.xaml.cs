@@ -1,14 +1,7 @@
 ﻿using RecipeManagementApp;
-using System.Text;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RecipeManagementAppWPF
 {
@@ -57,11 +50,21 @@ namespace RecipeManagementAppWPF
 
         private void ChangeScaleBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Implement the logic to change the scale of a recipe
             if (recipes.Count > 0)
             {
                 int indexVal = GetRecipeIndex("Select a recipe to change scale:", recipes);
-                Recipe.ChangeScale(recipes[indexVal]);
+                if (indexVal >= 0)
+                {
+                    var selectedRecipe = recipes[indexVal];
+                    var changeScaleWindow = new ChangeScaleWindow(selectedRecipe);
+                    bool? dialogResult = changeScaleWindow.ShowDialog();
+
+                    if (dialogResult == true)
+                    {
+                        // Optionally update UI or display a message after scale change
+                        MessageBox.Show("Scale changed successfully!");
+                    }
+                }
             }
             else
             {

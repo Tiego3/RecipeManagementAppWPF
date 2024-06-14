@@ -5,25 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipeManagementAppWPF"
         mc:Ignorable="d"
-        Title="AddRecipe" Height="450" Width="800">
-    <Grid>
+        Title="AddRecipe" Height="600" Width="400">
+    <ScrollViewer>
         <StackPanel Margin="10">
-            <TextBlock Text="Add a New Recipe" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 0 20"/>
+            <TextBlock Text="Add a New Recipe" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 20 0"/>
 
-            <TextBlock Text="Recipe Name:" FontSize="16"/>
-            <TextBox x:Name="RecipeNameTextBox" FontSize="16" Margin="0 0 0 20"/>
+            <TextBlock Text="Recipe Name:" FontSize="16" Margin="0 0 5 0"/>
+            <TextBox x:Name="RecipeNameTextBox" FontSize="16" Margin="0 0 20 0"/>
 
-            <TextBlock Text="Number of Ingredients:" FontSize="16"/>
-            <TextBox x:Name="NumIngredientsTextBox" FontSize="16" Margin="0 0 0 20"/>
+            <TextBlock Text="Ingredients:" FontSize="16" Margin="0 0 5 0"/>
+            <DataGrid x:Name="IngredientsDataGrid" AutoGenerateColumns="False" CanUserAddRows="True" Margin="0 0 20 0" Height="200">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Width="*"/>
+                    <DataGridTextColumn Header="Unit" Binding="{Binding Unit, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                    <DataGridTextColumn Header="Calories" Binding="{Binding Calories, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Width="*"/>
+                    <DataGridTextColumn Header="Food Group" Binding="{Binding FoodGroup, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
-            <Button Content="Add Ingredients" FontSize="16" Click="AddIngredientsBtn_Click" Margin="0 0 0 20"/>
-
-            <TextBlock Text="Number of Steps:" FontSize="16"/>
-            <TextBox x:Name="NumStepsTextBox" FontSize="16" Margin="0 0 0 20"/>
-
-            <Button Content="Add Steps" FontSize="16" Click="AddStepsBtn_Click" Margin="0 0 0 20"/>
-
-            <Button Content="Save Recipe" FontSize="16" Click="SaveRecipeBtn_Click"/>
+            <TextBlock Text="Steps:" FontSize="16" Margin="0 0 5 0"/>
+            <DataGrid x:Name="StepsDataGrid" AutoGenerateColumns="False" CanUserAddRows="True" Margin="0 0 20 0" Height="200">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Description" Binding="{Binding StepsDescription}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Save Recipe" FontSize="16" Click="SaveRecipeBtn_Click "  Margin="0 20 20 20"/>
         </StackPanel>
-    </Grid>
+    </ScrollViewer>
 </Window>
